@@ -11,7 +11,7 @@ import SwiftUI
 struct TourPlannitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            VSearchView()
         }
     }
 }
