@@ -61,6 +61,6 @@ struct RRouteOptionsRow: View {
 
 struct RRouteOptionsRow_Previews: PreviewProvider {
     static var previews: some View {
-        RRouteOptionsRow(sliderInput: 5.0, isEditing: false, sliderRange: 10, description: "Distance to walk", imageLiteral: "figure.walk.circle.fill", stringSpecifier: "%.2f", unitMeasure: "km")
+        RRouteOptionsRow(sliderInput: 5.0, isEditing: false, sliderRange: 10, description: "Distance to walk", imageLiteral: "figure.walk.circle.fill", stringSpecifier: "%.1f", unitMeasure: "km")
     }
 }

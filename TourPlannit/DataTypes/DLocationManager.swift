@@ -12,17 +12,21 @@
 import Foundation
 import MapKit
 
+/*
+    Helper class used to find the user's current location.
+    Once the Location Manager is initialised it triggers an authorisation update
+    and requests the user's location. 
+ */
 class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     private var locationManager: Optional<CLLocationManager> = CLLocationManager()
     
-    // 0 coordinates to identify an error quicker.
-    @Published var lastCoordinateRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+    @Published var lastCoordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    @Published var lastCoordinateRegion = DefaultRegion()
     
     override init() {
         super.init()
+        
         locationManager?.delegate = self
     }
     
@@ -61,11 +65,16 @@ class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last ?? CLLocation(latitude: 0.0, longitude: 0.0)
         
+        lastCoordinate.latitude = lastLocation.coordinate.latitude
+        lastCoordinate.longitude = lastLocation.coordinate.longitude
+        
         lastCoordinateRegion.center.latitude = lastLocation.coordinate.latitude
         lastCoordinateRegion.center.longitude = lastLocation.coordinate.longitude
     }
     
     internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        if let error = error as NSError? {
+            print("Location manager encountered an error: \(error.localizedDescription). The last fetched location is: \"Latitude\(self.lastCoordinate.latitude.description) and longitude \(self.lastCoordinate.longitude.description)\"")
+            }
     }
 }

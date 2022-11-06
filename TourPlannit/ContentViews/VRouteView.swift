@@ -6,24 +6,23 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct VRouteView: View {
+    
     var body: some View{
-        ZStack{
-                GeometryReader{ screen in
-                    CSlidingCard(width: screen.size.width, height: screen.size.height, alignment: .top, cardPosition: .middle){
-                    VStack(alignment: .leading, spacing: 10.0){
-                        Text("Options").font(.title3).padding()
-                        CRouteOptions()
-                        Text("Top Attractions").font(.title3).padding()
-                        RTouristAttractionRow(touristAttraction: touristAttractions[0])
-                        RTouristAttractionRow(touristAttraction: touristAttractions[1])
-                        RTouristAttractionRow(touristAttraction: touristAttractions[2])
-                        RTouristAttractionRow(touristAttraction: touristAttractions[3])
-                    }
+        
+        VStack(alignment: .leading, spacing: 10.0){
+            
+            Text("Options").font(.title3).padding()
+            CRouteOptions()
+            Text("Top Attractions").font(.title3).padding()
+            
+            ScrollView{
+                ForEach(touristAttractions) { result in
+                    RTouristAttractionRow(touristAttraction: result)
                 }
-                .edgesIgnoringSafeArea(.bottom)
-            }
+            }.frame(width: 360.0, height: 360.0)
         }
     }
 }

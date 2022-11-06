@@ -14,7 +14,7 @@ struct Coordinates: Hashable, Codable {
     var longitude: Double
 }
 
-struct DTouristAttraction: Hashable, Codable {
+struct DTouristAttraction: Identifiable, Hashable, Codable {
     
     // Public interface
     var id: Int
@@ -43,8 +43,8 @@ struct DTouristAttraction: Hashable, Codable {
     }
     
     // The tourist attraction location coordinates
-    private var coordinates: Coordinates
-    private var mapKitCoordinates: CLLocationCoordinate2D {
+    var coordinates: Coordinates
+    var mapKitCoordinates: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
             latitude: coordinates.latitude,
             longitude: coordinates.longitude
