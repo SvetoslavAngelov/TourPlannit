@@ -1,18 +1,13 @@
 //
-//  CTransparentCard.swift
+//  SRegularCard.swift
 //  TourPlannit
 //
-//  Created by Svetoslav Angelov on 10/09/2022.
+//  Created by Svetoslav Angelov on 28/09/2022.
 //
-
-/*
-    Basic card shape component using Swift's thin material
-    for a more blurry/glassy look.
- */
 
 import SwiftUI
 
-struct STransparentCard: View {
+struct SRegularCard: View {
     private var width: CGFloat
     private var height: CGFloat
     
@@ -25,14 +20,14 @@ struct STransparentCard: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 0.0)
             .frame(width: width, height: height)
-            .background(.ultraThinMaterial)
-            .blendMode(.softLight)
+            .blendMode(.overlay)
+            .background(.regularMaterial)
             .cornerRadius(10.0)
     }
 }
 
-struct STransparentCard_Previews: PreviewProvider {
+struct SRegularCard_Previews: PreviewProvider {
     static var previews: some View {
-        STransparentCard(width: 360, height: 180)
+        SRegularCard(width: 360, height: 180)
     }
 }

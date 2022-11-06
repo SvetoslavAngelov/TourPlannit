@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 @main
 struct TourPlannitApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            VSearchView()
+            VRootView()
         }
     }
 }

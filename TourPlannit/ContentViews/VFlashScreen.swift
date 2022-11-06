@@ -1,17 +1,18 @@
 //
-//  ContentView.swift
+//  VFlashScreen.swift
 //  TourPlannit
 //
-//  Created by Svetoslav Angelov on 10/09/2022.
+//  Created by Svetoslav Angelov on 15/10/2022.
 //
 
 import SwiftUI
 
-struct VMainView: View {
+struct VFlashScreen: View {
     
     var body: some View {
         ZStack(alignment: .center){
             background
+            
             VStack{
                 title
                 shape
@@ -49,8 +50,8 @@ struct VMainView: View {
     }
 }
 
-struct VMainView_Previews: PreviewProvider {
+struct VFlashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        VMainView()
+        VFlashScreen()
     }
 }

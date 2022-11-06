@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 extension CGSize: Comparable {
     public static func < (lhs: CGSize, rhs: CGSize) -> Bool {
@@ -31,4 +32,10 @@ extension CGSize: Comparable {
 
 func abs(_ a: CGSize) -> CGSize {
     return CGSize(width: abs(a.width), height: abs(a.height))
+}
+
+func DefaultRegion() -> MKCoordinateRegion {
+    return MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 51.476833, longitude: -0.000536),
+        span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
 }

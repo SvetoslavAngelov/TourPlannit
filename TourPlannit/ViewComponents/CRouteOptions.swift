@@ -14,16 +14,15 @@ import SwiftUI
 
 struct CRouteOptions: View {
     var body: some View {
-        ZStack(alignment: .center){
-            STransparentCard(width: 360.0, height: 160.0, color: Color(red: 0.43, green: 0.43, blue: 0.43, opacity: 1.0))
-                .cornerRadius(20.0)
-                .shadow(color: .gray, radius: 1.0)
+        ZStack(alignment: .leading){
+            STransparentCard(width: 360.0, height: 160.0)
+                .cornerRadius(10.0)
         
-            VStack(alignment: .leading, spacing: 16.0){
-                RRouteOptionsRow(sliderInput: 5.0, isEditing: false, sliderRange: 10.0, description: "Distance", imageLiteral: "figure.walk.circle.fill", stringSpecifier: "%.2f", unitMeasure: "km")
+            VStack(alignment: .leading, spacing: 20.0){
+                RRouteOptionsRow(sliderInput: 5.0, isEditing: false, sliderRange: 10.0, description: "Distance", imageLiteral: "figure.walk.circle.fill", stringSpecifier: "%.1f", unitMeasure: "km")
             
                 RRouteOptionsRow(sliderInput: 4.0, isEditing: false, sliderRange: 8.0, description: "Time Available", imageLiteral: "person.crop.circle.badge.clock.fill", stringSpecifier: "%.1f", unitMeasure: "hours")
-            }
+            }.padding(.leading)
         }
     }
 }

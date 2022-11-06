@@ -159,17 +159,17 @@ struct CSlidingCard<Content: View> : View {
         return ZStack(alignment: alignment) {
             
             // Card material
-            STransparentCard(width: self.width, height: self.height, color: Color(red: 0.43, green: 0.43, blue: 0.43, opacity: 0.5))
+            SRegularCard(width: self.width, height: self.height)
             
             // Handle
             RoundedRectangle(cornerRadius: 20.0)
                 .size(width: 38.0, height: 6.0)
                 .offset(x: (self.width * 0.5) - 19.0, y: 10.0)
-            
-            // Content views
-            content()
+
+                // Content views
+                content()
         }
-        // BUG replace the y check with card's latest position
+        // TODO replace the y check with card's latest position
         .offset(x: 0.0, y: cardPosition == .top && dragSize.height < 0 ? 0.0 : dragSize.height)
         .gesture(dragAction)
         .onTapGesture {
