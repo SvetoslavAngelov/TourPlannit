@@ -5,13 +5,12 @@
 //  Created by Svetoslav Angelov on 10/09/2022.
 //
 
-/*
-    Describes the a row in the route options menu, where the user
-    specifies the route parameters via a slider. 
- */
-
 import SwiftUI
 
+/*
+    Describes the a row in the route options menu, where the user
+    specifies the route parameters via a slider.
+ */
 struct RRouteOptionsRow: View {
     @State private var sliderInput: Double
     @State private var isEditing: Bool

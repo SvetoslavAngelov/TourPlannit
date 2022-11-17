@@ -5,13 +5,12 @@
 //  Created by Svetoslav Angelov on 10/09/2022.
 //
 
+import SwiftUI
+
 /*
     Describes a tourist attraciton row and the key attributes
     shown in it.
  */
-
-import SwiftUI
-
 struct RTouristAttractionRow: View {
     var touristAttraction: DTouristAttraction
     

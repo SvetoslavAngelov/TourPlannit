@@ -5,13 +5,12 @@
 //  Created by Svetoslav Angelov on 10/09/2022.
 //
 
+import SwiftUI
+
 /*
     A view component which contains the route options users
     have when defining a route.
  */
-
-import SwiftUI
-
 struct CRouteOptions: View {
     var body: some View {
         ZStack(alignment: .leading){

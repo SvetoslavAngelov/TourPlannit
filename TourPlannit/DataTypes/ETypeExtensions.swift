@@ -39,3 +39,7 @@ func DefaultRegion() -> MKCoordinateRegion {
         center: CLLocationCoordinate2D(latitude: 51.476833, longitude: -0.000536),
         span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
 }
+
+func DefaultCoordinates() -> CLLocationCoordinate2D {
+    return CLLocationCoordinate2D(latitude: 51.476833, longitude: -0.000536)
+}

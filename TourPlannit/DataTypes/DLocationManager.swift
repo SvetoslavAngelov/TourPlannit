@@ -5,10 +5,6 @@
 //  Created by Svetoslav Angelov on 10/09/2022.
 //
 
-/*
-    Class used to retrieve the user's latest location.
- */
-
 import Foundation
 import MapKit
 
@@ -20,9 +16,9 @@ import MapKit
 class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     private var locationManager: Optional<CLLocationManager> = CLLocationManager()
-    
-    @Published var lastCoordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     @Published var lastCoordinateRegion = DefaultRegion()
+    
+    var didChange = false
     
     override init() {
         super.init()
@@ -34,6 +30,10 @@ class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         if let locationManager {
             locationManager.requestLocation()
         }
+    }
+    
+    public func getLastCoordinateRegion() -> MKCoordinateRegion {
+        return self.lastCoordinateRegion
     }
     
     private func updateAuthorisationStatus() -> Void {
@@ -65,16 +65,15 @@ class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last ?? CLLocation(latitude: 0.0, longitude: 0.0)
         
-        lastCoordinate.latitude = lastLocation.coordinate.latitude
-        lastCoordinate.longitude = lastLocation.coordinate.longitude
-        
         lastCoordinateRegion.center.latitude = lastLocation.coordinate.latitude
         lastCoordinateRegion.center.longitude = lastLocation.coordinate.longitude
+        
+        didChange.toggle()
     }
     
     internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as NSError? {
-            print("Location manager encountered an error: \(error.localizedDescription). The last fetched location is: \"Latitude\(self.lastCoordinate.latitude.description) and longitude \(self.lastCoordinate.longitude.description)\"")
+            print("Location manager encountered an error: \(error.localizedDescription). The last fetched location is: \"Latitude\(self.lastCoordinateRegion.center.latitude.description) and longitude \(self.lastCoordinateRegion.center.longitude.description)\"")
             }
     }
 }

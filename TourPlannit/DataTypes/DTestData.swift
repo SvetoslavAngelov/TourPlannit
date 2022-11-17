@@ -7,6 +7,11 @@
 
 import Foundation
 
+/*
+    Helper function, which loads the test data and stores it in a local array object.
+    The function "load" is called when the touristAttractions object is initialised
+    at runtime. 
+ */
 var touristAttractions: [DTouristAttraction] = load("TestData_Attractions.json")
 
 func load<T: Decodable>(_ filename: String) -> T {

@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/*
+    This is a custom search component which is similar to the built in SwiftUI,
+    the main difference is the ability to set the background of the search component
+    and the greater flexibility when it comes to animating the various components. 
+ */
 struct CSearchBar: View {
 
     var isFocused: FocusState<Bool>.Binding

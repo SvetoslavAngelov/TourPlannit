@@ -5,13 +5,12 @@
 //  Created by Svetoslav Angelov on 10/09/2022.
 //
 
+import SwiftUI
+
 /*
     Basic card shape component using Swift's thin material
     for a more blurry/glassy look.
  */
-
-import SwiftUI
-
 struct STransparentCard: View {
     private var width: CGFloat
     private var height: CGFloat
