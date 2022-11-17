@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1212601628FC668C001E4646 /* CSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212601528FC668C001E4646 /* CSearchBar.swift */; };
 		122F0BB528F1DE4600BB1B1A /* VRootView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F0BB428F1DE4600BB1B1A /* VRootView .swift */; };
-		123B661328DBA52B00765C48 /* CMapBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123B661228DBA52B00765C48 /* CMapBackground.swift */; };
 		1246A96D28CCEC8A00C6B32C /* ETypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A96C28CCEC8A00C6B32C /* ETypeExtensions.swift */; };
 		1246A96F28CCFAA200C6B32C /* DTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A96E28CCFAA200C6B32C /* DTestData.swift */; };
 		1246A97128CCFAF000C6B32C /* DTouristAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */; };
@@ -17,7 +16,6 @@
 		1246A97528CCFD8A00C6B32C /* TestData_Attractions.json in Resources */ = {isa = PBXBuildFile; fileRef = 1246A97428CCFD8A00C6B32C /* TestData_Attractions.json */; };
 		1246A97728CD01C600C6B32C /* DLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97628CD01C600C6B32C /* DLocationManager.swift */; };
 		1246A97928CD025E00C6B32C /* VRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97828CD025E00C6B32C /* VRouteView.swift */; };
-		1246A97B28CD035B00C6B32C /* VSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97A28CD035B00C6B32C /* VSearchView.swift */; };
 		1248F0122917EBBF0009A653 /* DLocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1248F0112917EBBF0009A653 /* DLocationSearch.swift */; };
 		1253933D28D8C078005F34C1 /* RSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253933C28D8C078005F34C1 /* RSearchRow.swift */; };
 		12573C1A28FAC6AD00577518 /* VFlashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12573C1928FAC6AD00577518 /* VFlashScreen.swift */; };
@@ -29,13 +27,11 @@
 		12CED4C028CCA63600AEBE53 /* RRouteOptionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CED4BF28CCA63600AEBE53 /* RRouteOptionsRow.swift */; };
 		12CED4C228CCA6B900AEBE53 /* CRouteOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CED4C128CCA6B900AEBE53 /* CRouteOptions.swift */; };
 		12CED4C428CCA82A00AEBE53 /* CSlidingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CED4C328CCA82A00AEBE53 /* CSlidingCard.swift */; };
-		12FA48A129095A050022286E /* DSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA48A029095A050022286E /* DSearchRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1212601528FC668C001E4646 /* CSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSearchBar.swift; sourceTree = "<group>"; };
 		122F0BB428F1DE4600BB1B1A /* VRootView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VRootView .swift"; sourceTree = "<group>"; };
-		123B661228DBA52B00765C48 /* CMapBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMapBackground.swift; sourceTree = "<group>"; };
 		1246A96C28CCEC8A00C6B32C /* ETypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETypeExtensions.swift; sourceTree = "<group>"; };
 		1246A96E28CCFAA200C6B32C /* DTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTestData.swift; sourceTree = "<group>"; };
 		1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTouristAttraction.swift; sourceTree = "<group>"; };
@@ -43,7 +39,6 @@
 		1246A97428CCFD8A00C6B32C /* TestData_Attractions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestData_Attractions.json; sourceTree = "<group>"; };
 		1246A97628CD01C600C6B32C /* DLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLocationManager.swift; sourceTree = "<group>"; };
 		1246A97828CD025E00C6B32C /* VRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRouteView.swift; sourceTree = "<group>"; };
-		1246A97A28CD035B00C6B32C /* VSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSearchView.swift; sourceTree = "<group>"; };
 		1248F0112917EBBF0009A653 /* DLocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLocationSearch.swift; sourceTree = "<group>"; };
 		1253933B28D8BE00005F34C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1253933C28D8C078005F34C1 /* RSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSearchRow.swift; sourceTree = "<group>"; };
@@ -57,7 +52,6 @@
 		12CED4BF28CCA63600AEBE53 /* RRouteOptionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRouteOptionsRow.swift; sourceTree = "<group>"; };
 		12CED4C128CCA6B900AEBE53 /* CRouteOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRouteOptions.swift; sourceTree = "<group>"; };
 		12CED4C328CCA82A00AEBE53 /* CSlidingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSlidingCard.swift; sourceTree = "<group>"; };
-		12FA48A029095A050022286E /* DSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSearchRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +108,6 @@
 			children = (
 				12573C1928FAC6AD00577518 /* VFlashScreen.swift */,
 				122F0BB428F1DE4600BB1B1A /* VRootView .swift */,
-				1246A97A28CD035B00C6B32C /* VSearchView.swift */,
 				1246A97828CD025E00C6B32C /* VRouteView.swift */,
 			);
 			path = ContentViews;
@@ -126,7 +119,6 @@
 				12CED4C128CCA6B900AEBE53 /* CRouteOptions.swift */,
 				1212601528FC668C001E4646 /* CSearchBar.swift */,
 				12CED4C328CCA82A00AEBE53 /* CSlidingCard.swift */,
-				123B661228DBA52B00765C48 /* CMapBackground.swift */,
 				12CED4BE28CCA57500AEBE53 /* Shapes */,
 				12CED4BD28CCA56400AEBE53 /* Rows */,
 			);
@@ -140,7 +132,6 @@
 				1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */,
 				1248F0112917EBBF0009A653 /* DLocationSearch.swift */,
 				1246A97628CD01C600C6B32C /* DLocationManager.swift */,
-				12FA48A029095A050022286E /* DSearchRequest.swift */,
 				1246A96E28CCFAA200C6B32C /* DTestData.swift */,
 				1246A97428CCFD8A00C6B32C /* TestData_Attractions.json */,
 			);
@@ -238,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				122F0BB528F1DE4600BB1B1A /* VRootView .swift in Sources */,
-				123B661328DBA52B00765C48 /* CMapBackground.swift in Sources */,
 				1253933D28D8C078005F34C1 /* RSearchRow.swift in Sources */,
 				1246A97728CD01C600C6B32C /* DLocationManager.swift in Sources */,
 				1246A96F28CCFAA200C6B32C /* DTestData.swift in Sources */,
@@ -248,10 +238,8 @@
 				12CED4BC28CCA55B00AEBE53 /* STransparentCard.swift in Sources */,
 				1212601628FC668C001E4646 /* CSearchBar.swift in Sources */,
 				12A0404828E4ADAA00CCEDD4 /* SRegularCard.swift in Sources */,
-				1246A97B28CD035B00C6B32C /* VSearchView.swift in Sources */,
 				1246A97128CCFAF000C6B32C /* DTouristAttraction.swift in Sources */,
 				12573C1A28FAC6AD00577518 /* VFlashScreen.swift in Sources */,
-				12FA48A129095A050022286E /* DSearchRequest.swift in Sources */,
 				12CED4C028CCA63600AEBE53 /* RRouteOptionsRow.swift in Sources */,
 				1246A97328CCFB8700C6B32C /* RTouristAttractionRow.swift in Sources */,
 				12CED4AA28CCA2CA00AEBE53 /* TourPlannitApp.swift in Sources */,

@@ -19,9 +19,10 @@ class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
     
     @Published var searchQuery = ""
     var searchCompletion: [MKLocalSearchCompletion] = []
+    var didChange = false
     
-    var mapPlacemark: Optional<MKPlacemark> = nil
     
+    private var mapPlacemark: Optional<MKPlacemark> = nil
     private var searchCompleter = MKLocalSearchCompleter()
     private var cancellable: AnyCancellable?
     
@@ -53,10 +54,20 @@ class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
         
         search.start { response, error in
             guard let placemark = response?.mapItems[0].placemark else {
-                return
+                return print("MKLocalSearch encountered an error: \(String(describing: error?.localizedDescription))")
             }
             
             self.mapPlacemark = placemark
+            self.didChange.toggle()
+        }
+    }
+    
+    func getPlacemarkCoordinateRegion() -> MKCoordinateRegion {
+        
+        if self.mapPlacemark?.coordinate == nil {
+            return DefaultRegion()
+        } else {
+            return MKCoordinateRegion(center: self.mapPlacemark?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         }
     }
     

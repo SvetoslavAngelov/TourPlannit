@@ -5,12 +5,11 @@
 //  Created by Svetoslav Angelov on 10/09/2022.
 //
 
-/*
-    This component describes a sliding card which snaps to position
- */
-
 import SwiftUI
 
+/*
+    This component describes a sliding card which snaps to bottom, mid and top screen positions.
+ */
 enum CardPosition : Double {
     
     // The screen size depends on the iPhone model.
@@ -54,12 +53,12 @@ struct CSlidingCard<Content: View> : View {
     @GestureState private var dragSize = CGSize(width: 0.0, height: 0.0)
     
     /*
-        Class member function interface
+     Class member function interface
      */
     
     // Default initialiser, without an additional action specified
     init(width: CGFloat, height: CGFloat, alignment: Alignment, cardPosition: CardPosition, @ViewBuilder content: @escaping () -> Content) {
-
+        
         self.width = width
         self.height = height
         self.alignment = alignment
@@ -72,7 +71,7 @@ struct CSlidingCard<Content: View> : View {
     
     // Initialiser with an additional action attached to each drag gesture
     init(width: CGFloat, height: CGFloat, alignment: Alignment, cardPosition: CardPosition, action: @escaping () -> Void,@ViewBuilder content: @escaping () -> Content) {
-
+        
         self.width = width
         self.height = height
         self.alignment = alignment
@@ -93,7 +92,7 @@ struct CSlidingCard<Content: View> : View {
             cardPosition = .bottom
         case .smallUp:
             switch cardPosition {
-        
+                
             case .top:
                 break
             case .middle:
@@ -142,7 +141,7 @@ struct CSlidingCard<Content: View> : View {
     }
     
     /*
-        View body interface
+     View body interface
      */
     
     var body: some View {
@@ -165,9 +164,9 @@ struct CSlidingCard<Content: View> : View {
             RoundedRectangle(cornerRadius: 20.0)
                 .size(width: 38.0, height: 6.0)
                 .offset(x: (self.width * 0.5) - 19.0, y: 10.0)
-
-                // Content views
-                content()
+            
+            // Content views
+            content()
         }
         // TODO replace the y check with card's latest position
         .offset(x: 0.0, y: cardPosition == .top && dragSize.height < 0 ? 0.0 : dragSize.height)
@@ -184,8 +183,8 @@ struct CSlidingCard<Content: View> : View {
 struct CSlidingCard_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader{ screen in
-            CSlidingCard(width: screen.size.width, height: screen.size.height, alignment: .top, cardPosition: .top){
-                
+            CSlidingCard(width: screen.size.width, height: screen.size.height, alignment: .top, cardPosition: CardPosition.bottom){
+
             }
         }.edgesIgnoringSafeArea(.bottom)
     }
