@@ -25,18 +25,14 @@ struct RSearchRow: View {
     
     var body: some View {
         
-        ZStack(alignment: .center){
-            STransparentCard(width: 360.0, height: 80.0)
+        ZStack(alignment: .leading){
+            STransparentCard(width: 360.0, height: 60.0)
                 .cornerRadius(10.0)
             
-            VStack(alignment: .leading){
-                HStack(spacing: 10.0){
-                    Text("\(Image(systemName: "magnifyingglass"))").foregroundColor(.gray)
-                    Text(locationTitle).font(.title3)
-                }
+            VStack(alignment: .leading, spacing: 10.0){
+                Text(locationTitle).font(.headline)
                 Text(locationSubtitle).font(.subheadline)
-                Rectangle().frame(width: 340.0, height: 1.0).foregroundColor(.gray)
-            }
+            }.padding(.leading)
         }
     }
 }
