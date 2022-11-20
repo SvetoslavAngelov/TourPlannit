@@ -42,6 +42,7 @@ struct VRootView: View {
      Route options
      */
     @State var searchQuery: String = ""
+    @State var startLocation: String = ""
     
     /*
      Generated route
@@ -64,7 +65,8 @@ struct VRootView: View {
                             ForEach(locationSearch.searchCompletion, id: \.self) { location in
                                 Button {
                                     locationSearch.startSearch(location)
-                                    switchView()
+                                    startLocation = location.title
+                                    next()
                                 } label: {
                                     RSearchRow(locationItem: location)
                                 }.buttonStyle(.plain)
@@ -76,9 +78,34 @@ struct VRootView: View {
                      Route section
                      */
                     VStack(alignment: .leading){
-                        Text("Start Location").font(.title3).padding()
+                        Button {
+                          back()
+                        } label: {
+                            Text("\(Image(systemName: "chevron.backward.circle.fill"))").font(.title).padding()
+                        }
+                        
+                        Text("Start Location").font(.title3).padding(.leading)
+                        Text(startLocation).font(.subheadline).padding(.leading).padding(.top)
+                        Button {
+                            next()
+                        } label: {
+                            Text("Start")
+                        }.buttonStyle(.borderedProminent).padding(.leading)
                         VRouteView()
                     }.offset(x: navigationStack == .Route ? 0.0 : screen.size.width)
+                    
+                    /*
+                     Results section
+                     */
+                    VStack(alignment: .leading){
+                        Button {
+                          back()
+                        } label: {
+                            Text("\(Image(systemName: "chevron.backward.circle.fill"))").font(.title).padding()
+                        }
+                    
+                        VResultsView()
+                    }.offset(x: navigationStack == .Results ? 0.0 : screen.size.width)
                 }
             }.edgesIgnoringSafeArea(.bottom)
         }.onChange(of: locationManager.didChange) {_ in
@@ -92,9 +119,29 @@ struct VRootView: View {
         // TODO set location if device is offline
     }
     
-    private func switchView() -> Void {
-        isFocused = false
-        navigationStack = .Route
+    private func next() -> Void {
+        
+        switch navigationStack {
+        case .Search:
+            navigationStack = .Route
+            isFocused = false
+            searchQuery = ""
+        case .Route:
+            navigationStack = .Results
+        case .Results:
+            navigationStack = .Search
+        }
+    }
+    
+    private func back() -> Void {
+        switch navigationStack {
+        case .Search:
+            navigationStack = .Search
+        case .Route:
+            navigationStack = .Search
+        case .Results:
+            navigationStack = .Route
+        }
     }
     
     private func resetFocus() -> Void {

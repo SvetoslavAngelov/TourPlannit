@@ -20,6 +20,7 @@
 		1253933D28D8C078005F34C1 /* RSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253933C28D8C078005F34C1 /* RSearchRow.swift */; };
 		12573C1A28FAC6AD00577518 /* VFlashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12573C1928FAC6AD00577518 /* VFlashScreen.swift */; };
 		12A0404828E4ADAA00CCEDD4 /* SRegularCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A0404728E4ADAA00CCEDD4 /* SRegularCard.swift */; };
+		12B9CBB2292A98BE00BC2BAB /* VResultsView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9CBB1292A98BE00BC2BAB /* VResultsView .swift */; };
 		12CED4AA28CCA2CA00AEBE53 /* TourPlannitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CED4A928CCA2CA00AEBE53 /* TourPlannitApp.swift */; };
 		12CED4AE28CCA2CB00AEBE53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CED4AD28CCA2CB00AEBE53 /* Assets.xcassets */; };
 		12CED4B128CCA2CB00AEBE53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CED4B028CCA2CB00AEBE53 /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		1253933C28D8C078005F34C1 /* RSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSearchRow.swift; sourceTree = "<group>"; };
 		12573C1928FAC6AD00577518 /* VFlashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFlashScreen.swift; sourceTree = "<group>"; };
 		12A0404728E4ADAA00CCEDD4 /* SRegularCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRegularCard.swift; sourceTree = "<group>"; };
+		12B9CBB1292A98BE00BC2BAB /* VResultsView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VResultsView .swift"; sourceTree = "<group>"; };
 		12CED4A628CCA2CA00AEBE53 /* TourPlannit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TourPlannit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CED4A928CCA2CA00AEBE53 /* TourPlannitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourPlannitApp.swift; sourceTree = "<group>"; };
 		12CED4AD28CCA2CB00AEBE53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				12573C1928FAC6AD00577518 /* VFlashScreen.swift */,
 				122F0BB428F1DE4600BB1B1A /* VRootView .swift */,
 				1246A97828CD025E00C6B32C /* VRouteView.swift */,
+				12B9CBB1292A98BE00BC2BAB /* VResultsView .swift */,
 			);
 			path = ContentViews;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				122F0BB528F1DE4600BB1B1A /* VRootView .swift in Sources */,
+				12B9CBB2292A98BE00BC2BAB /* VResultsView .swift in Sources */,
 				1253933D28D8C078005F34C1 /* RSearchRow.swift in Sources */,
 				1246A97728CD01C600C6B32C /* DLocationManager.swift in Sources */,
 				1246A96F28CCFAA200C6B32C /* DTestData.swift in Sources */,
@@ -373,6 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TourPlannit/Preview Content\"";
+				DEVELOPMENT_TEAM = 6FXPU797XM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TourPlannit/Info.plist;
@@ -407,6 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TourPlannit/Preview Content\"";
+				DEVELOPMENT_TEAM = 6FXPU797XM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TourPlannit/Info.plist;
