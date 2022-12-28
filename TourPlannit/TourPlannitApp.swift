@@ -11,9 +11,11 @@ import MapKit
 @main
 struct TourPlannitApp: App {
     
+    @StateObject var slidingCardPosition = DCardPosition()
+    
     var body: some Scene {
         WindowGroup {
-            VRootView()
+            VMainView().environmentObject(slidingCardPosition)
         }
     }
 }

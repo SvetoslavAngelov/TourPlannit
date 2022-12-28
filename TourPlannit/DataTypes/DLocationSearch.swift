@@ -18,9 +18,8 @@ import Combine
 class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
     @Published var searchQuery = ""
-    var searchCompletion: [MKLocalSearchCompletion] = []
-    var didChange = false
     
+    var searchCompletion: [MKLocalSearchCompletion] = []
     
     private var mapPlacemark: Optional<MKPlacemark> = nil
     private var searchCompleter = MKLocalSearchCompleter()
@@ -58,7 +57,6 @@ class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
             }
             
             self.mapPlacemark = placemark
-            self.didChange.toggle()
         }
     }
     
