@@ -27,7 +27,7 @@ struct CSlidingCard<Content: View> : View {
     private var alignment: Alignment
     
     // The position at which the card is snapped in
-    @State private var cardPosition: DCardPosition
+    @EnvironmentObject private var cardPosition: DCardPosition
     
     // The size of the drag gesture.
     @GestureState private var dragSize = CGSize(width: 0.0, height: 0.0)
@@ -37,12 +37,11 @@ struct CSlidingCard<Content: View> : View {
      */
     
     // Default initialiser, without an additional action specified
-    init(width: CGFloat, height: CGFloat, alignment: Alignment, cardPosition: DCardPosition, @ViewBuilder content: @escaping () -> Content) {
+    init(width: CGFloat, height: CGFloat, alignment: Alignment, @ViewBuilder content: @escaping () -> Content) {
         
         self.width = width
         self.height = height
         self.alignment = alignment
-        self.cardPosition = cardPosition
         
         self.action = {}
         
@@ -50,12 +49,11 @@ struct CSlidingCard<Content: View> : View {
     }
     
     // Initialiser with an additional action attached to each drag gesture
-    init(width: CGFloat, height: CGFloat, alignment: Alignment, cardPosition: DCardPosition, action: @escaping () -> Void,@ViewBuilder content: @escaping () -> Content) {
+    init(width: CGFloat, height: CGFloat, alignment: Alignment, action: @escaping () -> Void,@ViewBuilder content: @escaping () -> Content) {
         
         self.width = width
         self.height = height
         self.alignment = alignment
-        self.cardPosition = cardPosition
         
         self.action = action
         
@@ -113,9 +111,9 @@ struct CSlidingCard<Content: View> : View {
 struct CSlidingCard_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader{ screen in
-            CSlidingCard(width: screen.size.width, height: screen.size.height, alignment: .top, cardPosition: DCardPosition()){
+            CSlidingCard(width: screen.size.width, height: screen.size.height, alignment: .top){
             }
-        }.edgesIgnoringSafeArea(.bottom)
+        }.edgesIgnoringSafeArea(.bottom).environmentObject(DCardPosition())
     }
 }
 

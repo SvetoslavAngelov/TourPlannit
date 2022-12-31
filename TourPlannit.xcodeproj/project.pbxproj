@@ -19,6 +19,9 @@
 		1248F0122917EBBF0009A653 /* DLocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1248F0112917EBBF0009A653 /* DLocationSearch.swift */; };
 		1253933D28D8C078005F34C1 /* RSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253933C28D8C078005F34C1 /* RSearchRow.swift */; };
 		12573C1A28FAC6AD00577518 /* VFlashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12573C1928FAC6AD00577518 /* VFlashScreen.swift */; };
+		1263B3E3295F04A300369A90 /* CSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1263B3E2295F04A300369A90 /* CSearchList.swift */; };
+		12988A72295C981700259690 /* DMapRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12988A71295C981700259690 /* DMapRegion.swift */; };
+		12988A74295C9C5100259690 /* ETypeDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12988A73295C9C5100259690 /* ETypeDefaults.swift */; };
 		1299FEA7293FAB8D0028CC5D /* CMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299FEA6293FAB8D0028CC5D /* CMapView.swift */; };
 		1299FEA9293FB06F0028CC5D /* VMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299FEA8293FB06F0028CC5D /* VMainView.swift */; };
 		12A0404828E4ADAA00CCEDD4 /* SRegularCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A0404728E4ADAA00CCEDD4 /* SRegularCard.swift */; };
@@ -47,6 +50,9 @@
 		1253933B28D8BE00005F34C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1253933C28D8C078005F34C1 /* RSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSearchRow.swift; sourceTree = "<group>"; };
 		12573C1928FAC6AD00577518 /* VFlashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFlashScreen.swift; sourceTree = "<group>"; };
+		1263B3E2295F04A300369A90 /* CSearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSearchList.swift; sourceTree = "<group>"; };
+		12988A71295C981700259690 /* DMapRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapRegion.swift; sourceTree = "<group>"; };
+		12988A73295C9C5100259690 /* ETypeDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETypeDefaults.swift; sourceTree = "<group>"; };
 		1299FEA6293FAB8D0028CC5D /* CMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMapView.swift; sourceTree = "<group>"; };
 		1299FEA8293FB06F0028CC5D /* VMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMainView.swift; sourceTree = "<group>"; };
 		12A0404728E4ADAA00CCEDD4 /* SRegularCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRegularCard.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 				12CED4C128CCA6B900AEBE53 /* CRouteOptions.swift */,
 				1299FEA6293FAB8D0028CC5D /* CMapView.swift */,
 				1212601528FC668C001E4646 /* CSearchBar.swift */,
+				1263B3E2295F04A300369A90 /* CSearchList.swift */,
 				12F9CC49295AFC5800E70DC5 /* CSlidingCard.swift */,
 				12CED4BE28CCA57500AEBE53 /* Shapes */,
 				12CED4BD28CCA56400AEBE53 /* Rows */,
@@ -140,7 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				1246A96C28CCEC8A00C6B32C /* ETypeExtensions.swift */,
+				12988A73295C9C5100259690 /* ETypeDefaults.swift */,
 				12F9CC4B295AFF9900E70DC5 /* DCardPosition.swift */,
+				12988A71295C981700259690 /* DMapRegion.swift */,
 				1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */,
 				1248F0112917EBBF0009A653 /* DLocationSearch.swift */,
 				1246A97628CD01C600C6B32C /* DLocationManager.swift */,
@@ -241,6 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				122F0BB528F1DE4600BB1B1A /* VRootView .swift in Sources */,
+				1263B3E3295F04A300369A90 /* CSearchList.swift in Sources */,
+				12988A74295C9C5100259690 /* ETypeDefaults.swift in Sources */,
 				12B9CBB2292A98BE00BC2BAB /* VResultsView .swift in Sources */,
 				1253933D28D8C078005F34C1 /* RSearchRow.swift in Sources */,
 				12F9CC4C295AFF9900E70DC5 /* DCardPosition.swift in Sources */,
@@ -251,6 +262,7 @@
 				12CED4BC28CCA55B00AEBE53 /* STransparentCard.swift in Sources */,
 				1212601628FC668C001E4646 /* CSearchBar.swift in Sources */,
 				12A0404828E4ADAA00CCEDD4 /* SRegularCard.swift in Sources */,
+				12988A72295C981700259690 /* DMapRegion.swift in Sources */,
 				12F9CC4A295AFC5800E70DC5 /* CSlidingCard.swift in Sources */,
 				1246A97128CCFAF000C6B32C /* DTouristAttraction.swift in Sources */,
 				1299FEA9293FB06F0028CC5D /* VMainView.swift in Sources */,

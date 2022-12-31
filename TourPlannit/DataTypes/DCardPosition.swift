@@ -8,13 +8,20 @@
 import Foundation
 import SwiftUI
 
+/*
+    Helper class which stores and updates the position of the main
+    sliding card component. This class defines the Y position the
+    card snaps to and exposes helper functions to update the card's
+    position from other parent views.
+ */
+
 enum DPosition: Double {
     
     // The screen size depends on the iPhone model.
     // The card Y position is calculated as % of
     // the screen height. For example, with a screen size
     // of 1000 pt, the middle position is y = 1000 * 0.4,
-    // while the top position is y = 0.0, or y = 1000 * 0.0.
+    // while the top position is y = 1000 * 0.0, or a Y of 0 (origin).
     
     case top = 0.0
     case middle = 0.4

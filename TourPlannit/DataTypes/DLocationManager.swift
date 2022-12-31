@@ -27,17 +27,13 @@ class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     public func requestLastLocation() -> Void {
         if let locationManager {
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.requestLocation()
+            DispatchQueue.main.async {
+                locationManager.requestLocation()
+            }
         }
     }
     
-    public func getLastCoordinateRegion() -> MKCoordinateRegion {
-        return self.lastCoordinateRegion
-    }
-    
     private func updateAuthorisationStatus() -> Void {
-         
          if let locationManager {
              switch locationManager.authorizationStatus{
                  
@@ -67,7 +63,7 @@ class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last ?? CLLocation(latitude: 0.0, longitude: 0.0)
-        
+    
         lastCoordinateRegion.center.latitude = lastLocation.coordinate.latitude
         lastCoordinateRegion.center.longitude = lastLocation.coordinate.longitude
     }

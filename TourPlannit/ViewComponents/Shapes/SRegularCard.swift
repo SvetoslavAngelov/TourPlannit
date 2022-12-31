@@ -18,7 +18,7 @@ struct SRegularCard: View {
     }
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 0.0)
+        RoundedRectangle(cornerRadius: 10.0)
             .strokeBorder(.black, lineWidth: 1.0)
             .frame(width: width, height: height)
             .blendMode(.overlay)

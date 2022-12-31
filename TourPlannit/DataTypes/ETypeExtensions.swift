@@ -30,16 +30,14 @@ extension CGSize: Comparable {
     }
 }
 
-func abs(_ a: CGSize) -> CGSize {
-    return CGSize(width: abs(a.width), height: abs(a.height))
+extension MKCoordinateRegion: Equatable {
+    public static func == (lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
+        return lhs.center.longitude == rhs.center.longitude &&
+        lhs.center.latitude == rhs.center.latitude
+    }
+    
+    public static func != (lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
+        return !(lhs == rhs)
+    }
 }
 
-func DefaultRegion() -> MKCoordinateRegion {
-    return MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 51.476833, longitude: -0.000536),
-        span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-}
-
-func DefaultCoordinates() -> CLLocationCoordinate2D {
-    return CLLocationCoordinate2D(latitude: 51.476833, longitude: -0.000536)
-}
