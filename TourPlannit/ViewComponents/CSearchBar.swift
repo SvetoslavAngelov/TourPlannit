@@ -26,21 +26,19 @@ struct CSearchBar: View {
         
         VStack(alignment: .leading, spacing: 10.0){
             
-            Text("Search").font(.title3).padding()
-            
             ZStack(alignment: .leading){
                 
                 RoundedRectangle(cornerRadius: 10.0)
                     .strokeBorder(.gray, lineWidth: 1.0)
-                    .frame(width: 360.0, height: 50)
+                    .frame(width: 320.0, height: 50)
                 
                 // Search field
                 HStack(spacing: 10.0){
                     Text("\(Image(systemName: "magnifyingglass"))")
                         .foregroundColor(.gray)
                         .padding(.leading)
-                    TextField("Search", text: $searchText)
-                        .frame(width: 260.0, height: 50.0)
+                    TextField("Start location...", text: $searchText)
+                        .frame(width: 220.0, height: 50.0)
                         .focused($isFocused)
                     if isFocused {
                         Button("\(Image(systemName: "x.circle.fill"))"){
@@ -90,7 +88,7 @@ struct CSearchBar_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             CSearchBar()
-                .environmentObject(DLocationSearch())
+                .environmentObject(DNavigationStack())
                 .environmentObject(DCardPosition())
         }
         

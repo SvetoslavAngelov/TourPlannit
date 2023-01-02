@@ -10,9 +10,7 @@ import MapKit
 
 struct CSearchList: View {
     
-    // The location search allows the user to search for specific
-    // points of interest on the map and retuns a map object upon
-    // successful search request.
+    @EnvironmentObject var navigationStack: DNavigationStack
     @EnvironmentObject var locationSearch: DLocationSearch
     
     @State var searchResults: [MKLocalSearchCompletion] = []
@@ -24,6 +22,7 @@ struct CSearchList: View {
             ForEach(searchResults.prefix(5), id: \.self) { location in
                 Button {
                     locationSearch.startSearch(location)
+                    navigationStack.navigateTo(.optionsView)
                 } label: {
                     RSearchRow(locationItem: location)
                 }.buttonStyle(.plain)
@@ -37,6 +36,8 @@ struct CSearchList: View {
 
 struct CSearchList_Previews: PreviewProvider {
     static var previews: some View {
-        CSearchList().environmentObject(DLocationSearch())
+        CSearchList()
+            .environmentObject(DNavigationStack())
+            .environmentObject(DLocationSearch())
     }
 }

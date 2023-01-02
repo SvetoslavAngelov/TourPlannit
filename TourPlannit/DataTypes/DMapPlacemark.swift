@@ -8,9 +8,10 @@
 import Foundation
 import MapKit
 
-class DMapRegion: ObservableObject {
+class DMapPlacemark: ObservableObject {
     
     @Published var region = DefaultRegion()
+    @Published var name = "Loading..."
 
     public func updateMapRegion(newRegion: MKCoordinateRegion) -> Void {
         region = newRegion
