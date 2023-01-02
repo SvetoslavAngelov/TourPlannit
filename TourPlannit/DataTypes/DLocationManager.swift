@@ -15,10 +15,9 @@ import MapKit
  */
 class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
-    private var locationManager: Optional<CLLocationManager> = CLLocationManager()
     @Published var lastCoordinateRegion = DefaultRegion()
     
-    var didChange = false
+    private var locationManager: Optional<CLLocationManager> = CLLocationManager()
     
     override init() {
         super.init()
@@ -28,35 +27,35 @@ class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     public func requestLastLocation() -> Void {
         if let locationManager {
-            locationManager.requestLocation()
-        }
-    }
-    
-    public func getLastCoordinateRegion() -> MKCoordinateRegion {
-        return self.lastCoordinateRegion
-    }
-    
-    private func updateAuthorisationStatus() -> Void {
-        
-        if let locationManager {
-            switch locationManager.authorizationStatus{
-                
-            case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
-            case .restricted:
-                // TODO
-                break
-            case .denied:
-                // TODO
-                break
-            case .authorizedAlways, .authorizedWhenInUse:
+            DispatchQueue.main.async {
                 locationManager.requestLocation()
-            @unknown default:
-                // TODO
-                break
             }
         }
     }
+    
+    private func updateAuthorisationStatus() -> Void {
+         if let locationManager {
+             switch locationManager.authorizationStatus{
+                 
+             case .notDetermined:
+                 locationManager.requestWhenInUseAuthorization()
+                 
+             case .restricted:
+                 displayLocationServicesDeniedAlert()
+                 break
+             case .denied:
+                 displayLocationServicesDeniedAlert()
+                 break
+                 
+             case .authorizedAlways, .authorizedWhenInUse:
+                 locationManager.requestLocation()
+                 
+             @unknown default:
+                 displayLocationServicesDeniedAlert()
+                 break
+             }
+         }
+     }
     
     internal func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         updateAuthorisationStatus()
@@ -64,16 +63,39 @@ class DLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last ?? CLLocation(latitude: 0.0, longitude: 0.0)
-        
+    
         lastCoordinateRegion.center.latitude = lastLocation.coordinate.latitude
         lastCoordinateRegion.center.longitude = lastLocation.coordinate.longitude
-        
-        didChange.toggle()
     }
     
     internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as NSError? {
             print("Location manager encountered an error: \(error.localizedDescription). The last fetched location is: \"Latitude\(self.lastCoordinateRegion.center.latitude.description) and longitude \(self.lastCoordinateRegion.center.longitude.description)\"")
             }
+    }
+    
+    private func displayLocationServicesDeniedAlert() {
+        
+        let message = NSLocalizedString("LOCATION_SERVICES_DENIED", comment: "Location services are denied")
+        let alertController = UIAlertController(title: NSLocalizedString("LOCATION_SERVICES_ALERT_TITLE", comment: "Location services alert title"),
+                                                message: message,
+                                                preferredStyle: .alert)
+        let settingsButtonTitle = NSLocalizedString("BUTTON_SETTINGS", comment: "Settings alert button")
+        let openSettingsAction = UIAlertAction(title: settingsButtonTitle, style: .default) { (_) in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                // Take the user to the Settings app to change permissions.
+                UIApplication.shared.open(settingsURL, options: [:]) { _ in
+                    print("User redirected to Settings app.")
+                }
+            }
+        }
+        
+        let cancelButtonTitle = NSLocalizedString("BUTTON_CANCEL", comment: "Location denied cancel button")
+        let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .cancel) { _ in
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(openSettingsAction)
     }
 }

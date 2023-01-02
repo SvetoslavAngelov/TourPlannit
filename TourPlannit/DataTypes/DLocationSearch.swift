@@ -17,12 +17,10 @@ import Combine
  */
 class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
+    @Published var searchCompletion: [MKLocalSearchCompletion] = []
+    @Published var mapPlacemark: Optional<MKPlacemark> = nil
     @Published var searchQuery = ""
-    var searchCompletion: [MKLocalSearchCompletion] = []
-    var didChange = false
     
-    
-    private var mapPlacemark: Optional<MKPlacemark> = nil
     private var searchCompleter = MKLocalSearchCompleter()
     private var cancellable: AnyCancellable?
     
@@ -38,13 +36,12 @@ class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
         cancellable = $searchQuery.assign(to: \.queryFragment, on: self.searchCompleter)
     }
     
-    func clearSearchQuerry() -> Void {
-        self.searchQuery = ""
-        self.searchCompletion = []
+    public func clearSearchQuerry() -> Void {
+        self.searchQuery.removeAll()
     }
     
     // Initiate a map search using fully formed address strings provided by the search completion object
-    func startSearch(_ completion: MKLocalSearchCompletion, _ region: MKCoordinateRegion = DefaultRegion()) -> Void {
+    public func startSearch(_ completion: MKLocalSearchCompletion, _ region: MKCoordinateRegion = DefaultRegion()) -> Void {
         let searchRequest = MKLocalSearch.Request(completion: completion)
         
         // Takes an optional region to narrow the address search to a specific region
@@ -58,12 +55,20 @@ class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
             }
             
             self.mapPlacemark = placemark
-            self.didChange.toggle()
         }
     }
     
-    func getPlacemarkCoordinateRegion() -> MKCoordinateRegion {
-        
+    // Allows clients to update the search query, without referencing it directly via the class'
+    // public interface.
+    public func updateSearchQuery(_ newSearchQuerry: String) -> Void {
+        searchQuery = newSearchQuerry
+    }
+    
+    // Returns a map coordinate region, if the search request was successful. This method should be called,
+    // only when the mapPlacemark object signals that it's state has changed, otherwise it may return the
+    // default region.
+    public func getPlacemarkCoordinateRegion() -> MKCoordinateRegion {
+    
         if self.mapPlacemark?.coordinate == nil {
             return DefaultRegion()
         } else {
@@ -72,7 +77,7 @@ class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
     }
     
     // Set the search completion array to empty if the search querry is empty or an error is captured
-    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+    internal func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
         if let error = error as NSError? {
             print("MKLocalSearchCompleter encountered an error: \(error.localizedDescription). The query fragment is: \"\(self.searchCompleter.queryFragment)\"")
         }
@@ -82,7 +87,7 @@ class DLocationSearch: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
     }
     
     // Runs every time a new set of results is returned by the MapKit API when the search querry is modified
-    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+    internal func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         self.searchCompletion = searchCompleter.results
     }
 }

@@ -14,48 +14,83 @@ import SwiftUI
  */
 struct CSearchBar: View {
 
-    var isFocused: FocusState<Bool>.Binding
-    @Binding var searchText: String
+    @State var searchText = ""
+    @FocusState var isFocused: Bool
+    
+    @EnvironmentObject var locationSearch: DLocationSearch
+    @EnvironmentObject var slidingCardPosition: DCardPosition
+    
     @State var cancelButtonOpacity = 0.0
     
     var body : some View {
         
         VStack(alignment: .leading, spacing: 10.0){
             
-            Text("Search").font(.title3).padding()
-            
             ZStack(alignment: .leading){
-                STransparentCard(width: 360.0, height: 50.0)
-                    .scaleEffect(x: isFocused.wrappedValue == true ? 0.8 : 1.0, y: 1.0, anchor: .leading)
-                    .animation(.interpolatingSpring(stiffness: 200.0, damping: 200.00, initialVelocity: 20.0), value: isFocused.wrappedValue)
+                
+                RoundedRectangle(cornerRadius: 10.0)
+                    .strokeBorder(.gray, lineWidth: 1.0)
+                    .frame(width: 320.0, height: 50)
                 
                 // Search field
                 HStack(spacing: 10.0){
-                    Text("\(Image(systemName: "magnifyingglass"))").padding(.leading)
-                    TextField("Search", text: $searchText)
-                        .frame(width: 240.0, height: 60.0)
-                        .focused(isFocused)
-                    if isFocused.wrappedValue {
-                        Button("Cancel"){
-                            isFocused.wrappedValue = false
-                            clearText()
-                        }.foregroundColor(Color(red: 0.25, green: 0.6, blue: 1.0, opacity: self.cancelButtonOpacity))
+                    Text("\(Image(systemName: "magnifyingglass"))")
+                        .foregroundColor(.gray)
+                        .padding(.leading)
+                    TextField("Start location...", text: $searchText)
+                        .frame(width: 220.0, height: 50.0)
+                        .focused($isFocused)
+                    if isFocused {
+                        Button("\(Image(systemName: "x.circle.fill"))"){
+                            isFocused = false
+                            clearSearchQuerry()
+                            
+                            // Set the sliding card's position to the bottom of the screen.
+                            slidingCardPosition.updatePosition(newPosition: .bottom)
+                        }.foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: self.cancelButtonOpacity))
+                            .font(.title2)
                             .onAppear{
-                                withAnimation(.easeIn(duration: 0.5)){
+                                withAnimation(.easeIn(duration: 1.0)) {
                                     cancelButtonOpacity = 1.0
                                 }
-                            }.onDisappear{
-                                withAnimation(.easeOut(duration: 0.5)){
-                                    cancelButtonOpacity = 0.0
-                                }
+                            }
+                            .onDisappear{
+                                cancelButtonOpacity = 0.0
                             }
                     }
                 }
             }
+        }.onChange(of: searchText) {_ in
+            if !searchText.isEmpty {
+                locationSearch.updateSearchQuery(searchText)
+            }
+        }.onChange(of: slidingCardPosition.position) {_ in
+            // When the text field is focused, the location of the card
+            // is going to be at the top, making space for the search results
+            // and the on-screen keyboard. If the location changes to any other
+            // value, the on screen keyboard should be hidden so it doesn't
+            // obstruct the sliding card component. 
+            isFocused = false
+            
+            clearSearchQuerry()
         }
     }
 
-    private func clearText() -> Void {
-        searchText = ""
+    private func clearSearchQuerry() -> Void {
+        
+        // Clear the local search text variable and the location search querry.
+        searchText.removeAll()
+        locationSearch.clearSearchQuerry()
+    }
+}
+
+struct CSearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack{
+            CSearchBar()
+                .environmentObject(DNavigationStack())
+                .environmentObject(DCardPosition())
+        }
+        
     }
 }

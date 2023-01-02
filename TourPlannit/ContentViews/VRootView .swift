@@ -23,33 +23,27 @@ enum NavigationStack {
 
 struct VRootView: View {
     
-    /*
-     Root view properties
-     */
+    var body: some View {
+        Text("Hello")
+    }
+/*
     @StateObject var locationManager = DLocationManager()
     @State var userCoordinateRegion = DefaultRegion()
     
     @State private var isAnimating = false
     @State private var navigationStack = NavigationStack.Search
     
-    /*
-     Search section
-     */
+
     @FocusState var isFocused: Bool
     @StateObject var locationSearch = DLocationSearch()
     
-    /*
-     Route options
-     */
+
     @State var searchQuery: String = ""
     @State var startLocation: String = ""
     
-    /*
-     Generated route
-     */
     
     var body: some View {
-        
+       
         ZStack{
             Map(coordinateRegion: $userCoordinateRegion, showsUserLocation: true).ignoresSafeArea().preferredColorScheme(.light)
             
@@ -118,7 +112,6 @@ struct VRootView: View {
         
         // TODO set location if device is offline
     }
-    
     private func next() -> Void {
         
         switch navigationStack {
@@ -148,6 +141,8 @@ struct VRootView: View {
         self.isFocused = false
         self.locationSearch.clearSearchQuerry()
     }
+ 
+ */
 }
 
 struct VRootView_Previews: PreviewProvider {
