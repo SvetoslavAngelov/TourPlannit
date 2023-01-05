@@ -1,9 +1,9 @@
 # SetOut!
-SetOut app for iOS 16.0
+SetOut app for iOS 16.0+
 
 ## Overview 
 SetOut is an iOS app which allows users to find the most optimal route to visit all tourist attractions in their area. The app is built in Swift
-and uses the SwiftUI framework. It's built for iOS 15.5+, the supported iPhone models are iPhone 8+. 
+and uses the SwiftUI framework. It's built for iOS 16.0+, the supported iPhone models are iPhone 8+. 
 
 ## App structure 
 
