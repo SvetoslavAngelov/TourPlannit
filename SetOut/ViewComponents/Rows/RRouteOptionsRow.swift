@@ -36,10 +36,12 @@ struct RRouteOptionsRow: View {
         VStack(alignment: .leading, spacing: 10.0){
             Text(description)
                 .font(.subheadline)
+                .bold()
+                .foregroundColor(.secondary)
             
             HStack{
                 Text(Image(systemName: imageLiteral))
-                    .font(.title)
+                    .font(.title2)
                 
                 Slider(
                     value: $sliderInput,
@@ -53,6 +55,7 @@ struct RRouteOptionsRow: View {
                 Text("\(sliderInput, specifier: stringSpecifier) \(unitMeasure)")
                     .font(.subheadline)
                     .bold()
+                    .foregroundColor(.secondary)
             }
         }
     }

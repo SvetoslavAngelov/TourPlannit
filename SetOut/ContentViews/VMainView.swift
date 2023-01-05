@@ -8,6 +8,15 @@
 import SwiftUI
 import MapKit
 
+/*
+    The main view is comprised of the following sub views:
+    1. Map view - the background of the app, it listens for changes to the locationSearch,
+    locationManager and mapPlacemark objects and updates the map accordingly.
+    2. Search view - allows users to set the start location of their route.
+    3. Options view - set route planning settings, including distance to cover and
+    time available per route.
+    4. Itinerary view - the generated route based on the parameters provided by the user. 
+ */
 struct VMainView: View {
     
     @EnvironmentObject var navigationStack: DNavigationStack

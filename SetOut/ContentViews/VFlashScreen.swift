@@ -8,7 +8,7 @@
 import SwiftUI
 
 /*
-    A simple flash screen that's used to hide the initial load time of the user's locaiton.
+    A simple flash screen used to introduce the user to the app.
  */
 struct VFlashScreen: View {
     

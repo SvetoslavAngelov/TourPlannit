@@ -14,8 +14,10 @@ import SwiftUI
 struct CRouteOptions: View {
     var body: some View {
         ZStack(alignment: .leading){
-            STransparentCard(width: 360.0, height: 160.0)
-                .cornerRadius(10.0)
+            RoundedRectangle(cornerRadius: 20.0)
+                .foregroundColor(Color(.white))
+                .frame(width: 360.0, height: 160.0)
+                .shadow(color: Color(.gray), radius: 0.5, x: 0.5, y: 1.0)
         
             VStack(alignment: .leading, spacing: 20.0){
                 RRouteOptionsRow(sliderInput: 5.0, isEditing: false, sliderRange: 10.0, description: "Distance", imageLiteral: "figure.walk.circle.fill", stringSpecifier: "%.1f", unitMeasure: "km")

@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct TourPlannitApp: App {
+struct SetOutApp: App {
     
     // Custom navigation stack, used to switch between the
     // three main sub views in the app:

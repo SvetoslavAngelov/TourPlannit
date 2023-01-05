@@ -19,7 +19,7 @@ struct CUserLocation: View {
             navigateToOptions()
         } label: {
             Text("\(Image(systemName: "location.circle.fill"))")
-                .foregroundColor(.blue).frame(width: 30.0).font(.title)
+                .foregroundColor(.blue).frame(width: 30.0).font(.title2)
         }
     }
     

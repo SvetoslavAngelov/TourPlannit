@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+/*
+    View which contains a custom search bar and list of search results. Users can
+    search for specific point of interest on the map and view them as a list.
+ */
 struct VSearchView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
-            Text("Search").font(.title3).padding()
+            Text("Search")
+                .font(.title3)
+                .foregroundColor(.secondary)
+                .padding()
             
             HStack(spacing: 10.0){
                 CSearchBar()

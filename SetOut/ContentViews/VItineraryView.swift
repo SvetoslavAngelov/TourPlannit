@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/*
+    A view with the generated itinerary presented to the user. 
+ */
 struct VResultsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0){

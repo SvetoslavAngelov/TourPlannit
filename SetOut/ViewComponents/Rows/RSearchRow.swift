@@ -14,8 +14,10 @@ struct RSearchRow: View {
     private var locationSubtitle: String
     
     init(locationItem: MKLocalSearchCompletion) {
+        
         self.locationTitle = locationItem.title
-        self.locationSubtitle = locationItem.subtitle
+        let lastCommaIndex = locationItem.subtitle.lastIndex(of: ",") ?? locationItem.subtitle.endIndex
+        self.locationSubtitle = String(locationItem.subtitle[..<lastCommaIndex])
     }
     
     init(title: String, subtitle: String) {
@@ -26,12 +28,18 @@ struct RSearchRow: View {
     var body: some View {
         
         ZStack(alignment: .leading){
-            STransparentCard(width: 360.0, height: 60.0)
+            STransparentCard(width: 360.0, height: 80.0)
                 .cornerRadius(10.0)
             
             VStack(alignment: .leading, spacing: 10.0){
-                Text(locationTitle).font(.headline)
-                Text(locationSubtitle).font(.subheadline)
+                Text(locationTitle)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .bold()
+                Text(locationSubtitle)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .frame(height: 40.0, alignment: .topLeading)
             }.padding(.leading)
         }
     }

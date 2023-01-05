@@ -8,6 +8,13 @@
 import SwiftUI
 import MapKit
 
+/*
+    The options view allows users to specify additional parameters
+    which are used to build the final itinerary (route), including:
+    1. Time available
+    2. Distance to cover
+    3. Tourist attractions to include in the itinerary
+ */
 struct VOptionsView: View {
 
     @EnvironmentObject var navigationStack: DNavigationStack
@@ -21,13 +28,17 @@ struct VOptionsView: View {
         VStack(alignment: .leading, spacing: 10.0){
             Text("Start Location").font(.title3).padding()
             
-            HStack(spacing: 10.0){
-                Text(startLocationName).frame(width: 320.0)
+            HStack(alignment: .center, spacing: 10.0){
+                Text(startLocationName)
+                    .frame(width: 300.0, alignment: .leading)
+                    .font(.subheadline)
+                    .bold()
+                    .padding(.leading)
                 
                 Button {
                     returnToSearchView()
                 } label: {
-                    Text("\(Image(systemName: "x.circle.fill"))").font(.title)
+                    Text("\(Image(systemName: "x.circle.fill"))").font(.title2)
                 }
             }
 
@@ -38,7 +49,8 @@ struct VOptionsView: View {
             
             ScrollView{
                 ForEach(touristAttractions) { result in
-                    RTouristAttractionRow(touristAttraction: result)
+                    //RTouristAttractionRow(touristAttraction: result)
+                    RAttractionRow(touristAttraction: result)
                 }
             }.frame(width: 360.0, height: 420.0)
         }.onAppear{

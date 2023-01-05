@@ -10,7 +10,7 @@
 		1212601628FC668C001E4646 /* CSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212601528FC668C001E4646 /* CSearchBar.swift */; };
 		121AB60629635A7B007A1BCB /* CUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AB60529635A7B007A1BCB /* CUserLocation.swift */; };
 		121AB60829635C31007A1BCB /* VSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AB60729635C31007A1BCB /* VSearchView.swift */; };
-		122F0BB528F1DE4600BB1B1A /* VRootView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F0BB428F1DE4600BB1B1A /* VRootView .swift */; };
+		123AADAE2964DAFF00EF4982 /* RAttractionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123AADAD2964DAFF00EF4982 /* RAttractionRow.swift */; };
 		1246A96D28CCEC8A00C6B32C /* ETypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A96C28CCEC8A00C6B32C /* ETypeExtensions.swift */; };
 		1246A96F28CCFAA200C6B32C /* DTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A96E28CCFAA200C6B32C /* DTestData.swift */; };
 		1246A97128CCFAF000C6B32C /* DTouristAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */; };
@@ -28,8 +28,8 @@
 		1299FEA9293FB06F0028CC5D /* VMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299FEA8293FB06F0028CC5D /* VMainView.swift */; };
 		12A0404828E4ADAA00CCEDD4 /* SRegularCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A0404728E4ADAA00CCEDD4 /* SRegularCard.swift */; };
 		12A493112961F0A800ADEFAC /* DNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A493102961F0A800ADEFAC /* DNavigationStack.swift */; };
-		12B9CBB2292A98BE00BC2BAB /* VResultsView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9CBB1292A98BE00BC2BAB /* VResultsView .swift */; };
-		12CED4AA28CCA2CA00AEBE53 /* TourPlannitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CED4A928CCA2CA00AEBE53 /* TourPlannitApp.swift */; };
+		12B9CBB2292A98BE00BC2BAB /* VItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9CBB1292A98BE00BC2BAB /* VItineraryView.swift */; };
+		12CED4AA28CCA2CA00AEBE53 /* SetOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CED4A928CCA2CA00AEBE53 /* SetOut.swift */; };
 		12CED4AE28CCA2CB00AEBE53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CED4AD28CCA2CB00AEBE53 /* Assets.xcassets */; };
 		12CED4B128CCA2CB00AEBE53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CED4B028CCA2CB00AEBE53 /* Preview Assets.xcassets */; };
 		12CED4BC28CCA55B00AEBE53 /* STransparentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CED4BB28CCA55B00AEBE53 /* STransparentCard.swift */; };
@@ -43,7 +43,7 @@
 		1212601528FC668C001E4646 /* CSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSearchBar.swift; sourceTree = "<group>"; };
 		121AB60529635A7B007A1BCB /* CUserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUserLocation.swift; sourceTree = "<group>"; };
 		121AB60729635C31007A1BCB /* VSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSearchView.swift; sourceTree = "<group>"; };
-		122F0BB428F1DE4600BB1B1A /* VRootView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VRootView .swift"; sourceTree = "<group>"; };
+		123AADAD2964DAFF00EF4982 /* RAttractionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAttractionRow.swift; sourceTree = "<group>"; };
 		1246A96C28CCEC8A00C6B32C /* ETypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETypeExtensions.swift; sourceTree = "<group>"; };
 		1246A96E28CCFAA200C6B32C /* DTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTestData.swift; sourceTree = "<group>"; };
 		1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTouristAttraction.swift; sourceTree = "<group>"; };
@@ -62,9 +62,9 @@
 		1299FEA8293FB06F0028CC5D /* VMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMainView.swift; sourceTree = "<group>"; };
 		12A0404728E4ADAA00CCEDD4 /* SRegularCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRegularCard.swift; sourceTree = "<group>"; };
 		12A493102961F0A800ADEFAC /* DNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNavigationStack.swift; sourceTree = "<group>"; };
-		12B9CBB1292A98BE00BC2BAB /* VResultsView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VResultsView .swift"; sourceTree = "<group>"; };
-		12CED4A628CCA2CA00AEBE53 /* TourPlannit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TourPlannit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		12CED4A928CCA2CA00AEBE53 /* TourPlannitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourPlannitApp.swift; sourceTree = "<group>"; };
+		12B9CBB1292A98BE00BC2BAB /* VItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VItineraryView.swift; sourceTree = "<group>"; };
+		12CED4A628CCA2CA00AEBE53 /* SetOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12CED4A928CCA2CA00AEBE53 /* SetOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOut.swift; sourceTree = "<group>"; };
 		12CED4AD28CCA2CB00AEBE53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12CED4B028CCA2CB00AEBE53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12CED4BB28CCA55B00AEBE53 /* STransparentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STransparentCard.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		12CED49D28CCA2CA00AEBE53 = {
 			isa = PBXGroup;
 			children = (
-				12CED4A828CCA2CA00AEBE53 /* TourPlannit */,
+				12CED4A828CCA2CA00AEBE53 /* SetOut */,
 				12CED4A728CCA2CA00AEBE53 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,23 +96,23 @@
 		12CED4A728CCA2CA00AEBE53 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				12CED4A628CCA2CA00AEBE53 /* TourPlannit.app */,
+				12CED4A628CCA2CA00AEBE53 /* SetOut.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		12CED4A828CCA2CA00AEBE53 /* TourPlannit */ = {
+		12CED4A828CCA2CA00AEBE53 /* SetOut */ = {
 			isa = PBXGroup;
 			children = (
 				1253933B28D8BE00005F34C1 /* Info.plist */,
-				12CED4A928CCA2CA00AEBE53 /* TourPlannitApp.swift */,
+				12CED4A928CCA2CA00AEBE53 /* SetOut.swift */,
 				12CED4B828CCA2DF00AEBE53 /* ContentViews */,
 				12CED4B928CCA45200AEBE53 /* ViewComponents */,
 				12CED4BA28CCA46E00AEBE53 /* DataTypes */,
 				12CED4AD28CCA2CB00AEBE53 /* Assets.xcassets */,
 				12CED4AF28CCA2CB00AEBE53 /* Preview Content */,
 			);
-			path = TourPlannit;
+			path = SetOut;
 			sourceTree = "<group>";
 		};
 		12CED4AF28CCA2CB00AEBE53 /* Preview Content */ = {
@@ -130,8 +130,7 @@
 				1299FEA8293FB06F0028CC5D /* VMainView.swift */,
 				121AB60729635C31007A1BCB /* VSearchView.swift */,
 				1246A97828CD025E00C6B32C /* VOptionsView.swift */,
-				122F0BB428F1DE4600BB1B1A /* VRootView .swift */,
-				12B9CBB1292A98BE00BC2BAB /* VResultsView .swift */,
+				12B9CBB1292A98BE00BC2BAB /* VItineraryView.swift */,
 			);
 			path = ContentViews;
 			sourceTree = "<group>";
@@ -173,6 +172,7 @@
 			children = (
 				12CED4BF28CCA63600AEBE53 /* RRouteOptionsRow.swift */,
 				1246A97228CCFB8700C6B32C /* RTouristAttractionRow.swift */,
+				123AADAD2964DAFF00EF4982 /* RAttractionRow.swift */,
 				1253933C28D8C078005F34C1 /* RSearchRow.swift */,
 			);
 			path = Rows;
@@ -190,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		12CED4A528CCA2CA00AEBE53 /* TourPlannit */ = {
+		12CED4A528CCA2CA00AEBE53 /* SetOut */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 12CED4B428CCA2CB00AEBE53 /* Build configuration list for PBXNativeTarget "TourPlannit" */;
+			buildConfigurationList = 12CED4B428CCA2CB00AEBE53 /* Build configuration list for PBXNativeTarget "SetOut" */;
 			buildPhases = (
 				12CED4A228CCA2CA00AEBE53 /* Sources */,
 				12CED4A328CCA2CA00AEBE53 /* Frameworks */,
@@ -202,9 +202,9 @@
 			);
 			dependencies = (
 			);
-			name = TourPlannit;
+			name = SetOut;
 			productName = TourPlannit;
-			productReference = 12CED4A628CCA2CA00AEBE53 /* TourPlannit.app */;
+			productReference = 12CED4A628CCA2CA00AEBE53 /* SetOut.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +222,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 12CED4A128CCA2CA00AEBE53 /* Build configuration list for PBXProject "TourPlannit" */;
+			buildConfigurationList = 12CED4A128CCA2CA00AEBE53 /* Build configuration list for PBXProject "SetOut" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -235,7 +235,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				12CED4A528CCA2CA00AEBE53 /* TourPlannit */,
+				12CED4A528CCA2CA00AEBE53 /* SetOut */,
 			);
 		};
 /* End PBXProject section */
@@ -258,15 +258,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122F0BB528F1DE4600BB1B1A /* VRootView .swift in Sources */,
 				121AB60829635C31007A1BCB /* VSearchView.swift in Sources */,
 				1263B3E3295F04A300369A90 /* CSearchList.swift in Sources */,
 				12988A74295C9C5100259690 /* ETypeDefaults.swift in Sources */,
-				12B9CBB2292A98BE00BC2BAB /* VResultsView .swift in Sources */,
+				12B9CBB2292A98BE00BC2BAB /* VItineraryView.swift in Sources */,
 				12A493112961F0A800ADEFAC /* DNavigationStack.swift in Sources */,
 				1253933D28D8C078005F34C1 /* RSearchRow.swift in Sources */,
 				12F9CC4C295AFF9900E70DC5 /* DCardPosition.swift in Sources */,
 				1246A97728CD01C600C6B32C /* DLocationManager.swift in Sources */,
+				123AADAE2964DAFF00EF4982 /* RAttractionRow.swift in Sources */,
 				1246A96F28CCFAA200C6B32C /* DTestData.swift in Sources */,
 				12CED4C228CCA6B900AEBE53 /* CRouteOptions.swift in Sources */,
 				1246A97928CD025E00C6B32C /* VOptionsView.swift in Sources */,
@@ -281,7 +281,7 @@
 				12573C1A28FAC6AD00577518 /* VFlashScreen.swift in Sources */,
 				12CED4C028CCA63600AEBE53 /* RRouteOptionsRow.swift in Sources */,
 				1246A97328CCFB8700C6B32C /* RTouristAttractionRow.swift in Sources */,
-				12CED4AA28CCA2CA00AEBE53 /* TourPlannitApp.swift in Sources */,
+				12CED4AA28CCA2CA00AEBE53 /* SetOut.swift in Sources */,
 				1246A96D28CCEC8A00C6B32C /* ETypeExtensions.swift in Sources */,
 				1248F0122917EBBF0009A653 /* DLocationSearch.swift in Sources */,
 				1299FEA7293FAB8D0028CC5D /* CMapView.swift in Sources */,
@@ -412,11 +412,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TourPlannit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SetOut/Preview Content\"";
 				DEVELOPMENT_TEAM = 6FXPU797XM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TourPlannit/Info.plist;
+				INFOPLIST_FILE = SetOut/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs to access your current location, in order to find the best tourist attractions near you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -429,7 +429,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = svetlo.TourPlannit;
+				PRODUCT_BUNDLE_IDENTIFIER = svetlo.SetOut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -447,11 +447,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TourPlannit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SetOut/Preview Content\"";
 				DEVELOPMENT_TEAM = 6FXPU797XM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TourPlannit/Info.plist;
+				INFOPLIST_FILE = SetOut/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs to access your current location, in order to find the best tourist attractions near you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -464,7 +464,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = svetlo.TourPlannit;
+				PRODUCT_BUNDLE_IDENTIFIER = svetlo.SetOut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -478,7 +478,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		12CED4A128CCA2CA00AEBE53 /* Build configuration list for PBXProject "TourPlannit" */ = {
+		12CED4A128CCA2CA00AEBE53 /* Build configuration list for PBXProject "SetOut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				12CED4B228CCA2CB00AEBE53 /* Debug */,
@@ -487,7 +487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		12CED4B428CCA2CB00AEBE53 /* Build configuration list for PBXNativeTarget "TourPlannit" */ = {
+		12CED4B428CCA2CB00AEBE53 /* Build configuration list for PBXNativeTarget "SetOut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				12CED4B528CCA2CB00AEBE53 /* Debug */,
