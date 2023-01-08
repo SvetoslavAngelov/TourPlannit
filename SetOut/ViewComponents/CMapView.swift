@@ -15,21 +15,17 @@ import MapKit
  */
 
 struct CMapView: View {
-    @State var region = DefaultRegion()
     
-    // The map placemark is the area where the Map View component is
-    // centred at. It can be set to the user's location or to a
-    // specific point of interest on the map set by the user.
     @EnvironmentObject var mapPlacemark: DMapPlacemark
-    
-    // The location manager requests access to the user's location
-    // and then provides the user's location upon request.
     @EnvironmentObject var locationManager: DLocationManager
-    
     @EnvironmentObject var locationSearch: DLocationSearch
     
+    @State var region = DefaultRegion()
+    
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true)
+        Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: mapPlacemark.annotations) {
+            MapMarker(coordinate: $0.coordinates, tint: .blue)
+        }
             .ignoresSafeArea()
             .onChange(of: mapPlacemark.region) {_ in
                 withAnimation(.easeInOut(duration: 4.0)){
@@ -37,15 +33,13 @@ struct CMapView: View {
                 }
             }.onChange(of: locationManager.lastCoordinateRegion) {_ in
                 withAnimation(.easeInOut(duration: 4.0)){
-                    mapPlacemark.region = locationManager.lastCoordinateRegion
+                    mapPlacemark.updateMapRegion(newRegion: locationManager.lastCoordinateRegion)
                     mapPlacemark.name = "Current Location"
                 }
             }.onChange(of: locationSearch.mapPlacemark) {_ in
                 withAnimation(.easeInOut(duration: 4.0)){
-                    mapPlacemark.region = MKCoordinateRegion(
-                        center: locationSearch.mapPlacemark?.coordinate ?? CLLocationCoordinate2D(latitude: 51.476833, longitude: -0.000536),
-                        span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-                    mapPlacemark.name = locationSearch.mapPlacemark?.name ?? "Loading"
+                    mapPlacemark.updateMapRegion(newCoordinate: locationSearch.mapPlacemark?.coordinate)
+                    mapPlacemark.name = locationSearch.mapPlacemark?.name ?? "Loading..."
                 }
             }
     }

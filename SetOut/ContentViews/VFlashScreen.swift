@@ -47,7 +47,7 @@ struct VFlashScreen: View {
     }
     
     var title: some View{
-        Text("PlannIt")
+        Text("SetOut!")
             .font(.title)
             .foregroundColor(.white)
     }

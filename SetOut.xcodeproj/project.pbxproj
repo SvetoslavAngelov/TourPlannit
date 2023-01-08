@@ -14,7 +14,6 @@
 		1246A96D28CCEC8A00C6B32C /* ETypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A96C28CCEC8A00C6B32C /* ETypeExtensions.swift */; };
 		1246A96F28CCFAA200C6B32C /* DTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A96E28CCFAA200C6B32C /* DTestData.swift */; };
 		1246A97128CCFAF000C6B32C /* DTouristAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */; };
-		1246A97328CCFB8700C6B32C /* RTouristAttractionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97228CCFB8700C6B32C /* RTouristAttractionRow.swift */; };
 		1246A97528CCFD8A00C6B32C /* TestData_Attractions.json in Resources */ = {isa = PBXBuildFile; fileRef = 1246A97428CCFD8A00C6B32C /* TestData_Attractions.json */; };
 		1246A97728CD01C600C6B32C /* DLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97628CD01C600C6B32C /* DLocationManager.swift */; };
 		1246A97928CD025E00C6B32C /* VOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246A97828CD025E00C6B32C /* VOptionsView.swift */; };
@@ -47,7 +46,6 @@
 		1246A96C28CCEC8A00C6B32C /* ETypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETypeExtensions.swift; sourceTree = "<group>"; };
 		1246A96E28CCFAA200C6B32C /* DTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTestData.swift; sourceTree = "<group>"; };
 		1246A97028CCFAF000C6B32C /* DTouristAttraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTouristAttraction.swift; sourceTree = "<group>"; };
-		1246A97228CCFB8700C6B32C /* RTouristAttractionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTouristAttractionRow.swift; sourceTree = "<group>"; };
 		1246A97428CCFD8A00C6B32C /* TestData_Attractions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestData_Attractions.json; sourceTree = "<group>"; };
 		1246A97628CD01C600C6B32C /* DLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLocationManager.swift; sourceTree = "<group>"; };
 		1246A97828CD025E00C6B32C /* VOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOptionsView.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				12CED4BF28CCA63600AEBE53 /* RRouteOptionsRow.swift */,
-				1246A97228CCFB8700C6B32C /* RTouristAttractionRow.swift */,
 				123AADAD2964DAFF00EF4982 /* RAttractionRow.swift */,
 				1253933C28D8C078005F34C1 /* RSearchRow.swift */,
 			);
@@ -280,7 +277,6 @@
 				1299FEA9293FB06F0028CC5D /* VMainView.swift in Sources */,
 				12573C1A28FAC6AD00577518 /* VFlashScreen.swift in Sources */,
 				12CED4C028CCA63600AEBE53 /* RRouteOptionsRow.swift in Sources */,
-				1246A97328CCFB8700C6B32C /* RTouristAttractionRow.swift in Sources */,
 				12CED4AA28CCA2CA00AEBE53 /* SetOut.swift in Sources */,
 				1246A96D28CCEC8A00C6B32C /* ETypeExtensions.swift in Sources */,
 				1248F0122917EBBF0009A653 /* DLocationSearch.swift in Sources */,
@@ -410,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SetOut/Preview Content\"";
@@ -445,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SetOut/Preview Content\"";

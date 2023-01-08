@@ -35,7 +35,7 @@ struct VMainView: View {
                     case .optionsView:
                         VOptionsView()
                     case .itineraryView:
-                        VOptionsView()
+                        VItineraryView()
                     }
                 }
             }.edgesIgnoringSafeArea(.bottom)

@@ -26,30 +26,58 @@ struct VOptionsView: View {
     var body: some View{
         
         VStack(alignment: .leading, spacing: 10.0){
-            Text("Start Location").font(.title3).padding()
+            Text("Start Location")
+                .font(.title3)
+                .foregroundColor(Color("primary"))
+                .bold()
+                .padding()
             
-            HStack(alignment: .center, spacing: 10.0){
-                Text(startLocationName)
-                    .frame(width: 300.0, alignment: .leading)
-                    .font(.subheadline)
-                    .bold()
-                    .padding(.leading)
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 20.0)
+                    .foregroundColor(Color(.white))
+                    .frame(width: 240.0, height: 60.0)
+                    .shadow(color: Color(.gray), radius: 0.5, x: 0.5, y: 1.0)
                 
-                Button {
-                    returnToSearchView()
-                } label: {
-                    Text("\(Image(systemName: "x.circle.fill"))").font(.title2)
+                HStack(alignment: .center, spacing: 10.0){
+                    Text(startLocationName)
+                        .frame(width: 230.0, alignment: .leading)
+                        .font(.subheadline)
+                        .foregroundColor(Color("primary"))
+                        .bold()
+                        .padding(.leading)
+                    
+                    Button {
+                        returnToSearchView()
+                    } label: {
+                        Text("\(Image(systemName: "magnifyingglass"))")
+                            .font(.title2)
+                    }.buttonStyle(.borderedProminent)
+                    
+                    Button {
+                        startRoutePlan()
+                    } label: {
+                        Text("\(Image(systemName: "compass.drawing"))")
+                            .font(.title2)
+                    }.buttonStyle(.borderedProminent)
                 }
             }
 
+            Text("Options")
+                .font(.title3)
+                .foregroundColor(Color("primary"))
+                .bold()
+                .padding()
             
-            Text("Options").font(.title3).padding()
             CRouteOptions()
-            Text("Top Attractions").font(.title3).padding()
+            
+            Text("Top Attractions")
+                .font(.title3)
+                .foregroundColor(Color("primary"))
+                .bold()
+                .padding()
             
             ScrollView{
                 ForEach(touristAttractions) { result in
-                    //RTouristAttractionRow(touristAttraction: result)
                     RAttractionRow(touristAttraction: result)
                 }
             }.frame(width: 360.0, height: 420.0)
@@ -62,9 +90,16 @@ struct VOptionsView: View {
     }
     
     private func returnToSearchView() -> Void {
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
-            navigationStack.stack = .searchView
+            navigationStack.navigateTo(.searchView)
+            slidingCardPosition.updatePosition(newPosition: .bottom)
+        }
+    }
+    
+    private func startRoutePlan() -> Void {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+            navigationStack.navigateTo(.itineraryView)
+            slidingCardPosition.updatePosition(newPosition: .middle)
         }
     }
 }

@@ -16,7 +16,8 @@ struct VSearchView: View {
         VStack(alignment: .leading, spacing: 10.0) {
             Text("Search")
                 .font(.title3)
-                .foregroundColor(.secondary)
+                .foregroundColor(Color("primary"))
+                .bold()
                 .padding()
             
             HStack(spacing: 10.0){

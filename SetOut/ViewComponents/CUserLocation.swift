@@ -18,9 +18,10 @@ struct CUserLocation: View {
             requestLocation()
             navigateToOptions()
         } label: {
-            Text("\(Image(systemName: "location.circle.fill"))")
-                .foregroundColor(.blue).frame(width: 30.0).font(.title2)
-        }
+            Text("\(Image(systemName: "location"))")
+                .frame(width: 30.0)
+                .font(.title2)
+        }.buttonStyle(.borderedProminent)
     }
     
     private func requestLocation() -> Void {
@@ -30,14 +31,14 @@ struct CUserLocation: View {
         if lastUserLocation == locationManager.lastCoordinateRegion{
             
             // move the map view back to the user's original location.
-            mapPlacemark.region = locationManager.lastCoordinateRegion
+            mapPlacemark.updateMapRegion(newRegion: locationManager.lastCoordinateRegion)
             mapPlacemark.name = "Current Location"
         }
     }
     
     private func navigateToOptions() -> Void {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
-            navigationStack.stack = .optionsView
+            navigationStack.navigateTo(.optionsView)
         }
     }
 }

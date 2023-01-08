@@ -37,11 +37,12 @@ struct RRouteOptionsRow: View {
             Text(description)
                 .font(.subheadline)
                 .bold()
-                .foregroundColor(.secondary)
+                .foregroundColor(Color("primary"))
             
             HStack{
                 Text(Image(systemName: imageLiteral))
                     .font(.title2)
+                    .foregroundColor(Color("primary"))
                 
                 Slider(
                     value: $sliderInput,
@@ -55,7 +56,7 @@ struct RRouteOptionsRow: View {
                 Text("\(sliderInput, specifier: stringSpecifier) \(unitMeasure)")
                     .font(.subheadline)
                     .bold()
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color("primary"))
             }
         }
     }

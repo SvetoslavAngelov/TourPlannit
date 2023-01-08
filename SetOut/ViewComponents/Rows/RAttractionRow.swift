@@ -26,7 +26,7 @@ struct RAttractionRow: View {
                     .cornerRadius(50.0)
 
                 Text(touristAttraction.name)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color("primary"))
                     .font(.subheadline)
                     .bold()
                     .frame(width: 120.0, alignment: .leading)
@@ -39,7 +39,7 @@ struct RAttractionRow: View {
                     Text("\(touristAttraction.rating, specifier: "%.1f")")
                         .font(.subheadline)
                         .bold()
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color("primary"))
                     
                     Text("\(Image(systemName: "star.fill"))")
                         .foregroundColor(.orange)

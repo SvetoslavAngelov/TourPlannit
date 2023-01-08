@@ -30,7 +30,7 @@ struct CSearchBar: View {
                 
                 RoundedRectangle(cornerRadius: 10.0)
                     .strokeBorder(.gray, lineWidth: 1.0)
-                    .frame(width: 320.0, height: 50)
+                    .frame(width: 300.0, height: 50)
                 
                 // Search field
                 HStack(spacing: 10.0){
@@ -38,7 +38,7 @@ struct CSearchBar: View {
                         .foregroundColor(.gray)
                         .padding(.leading)
                     TextField("Start location...", text: $searchText)
-                        .frame(width: 220.0, height: 50.0)
+                        .frame(width: 200.0, height: 50.0)
                         .focused($isFocused)
                     if isFocused {
                         Button("\(Image(systemName: "x.circle.fill"))"){

@@ -12,6 +12,7 @@ struct CSearchList: View {
     
     @EnvironmentObject var navigationStack: DNavigationStack
     @EnvironmentObject var locationSearch: DLocationSearch
+    @EnvironmentObject var slidingCardPosition: DCardPosition
     
     @State var searchResults: [MKLocalSearchCompletion] = []
     
@@ -22,7 +23,10 @@ struct CSearchList: View {
             ForEach(searchResults.prefix(5), id: \.self) { location in
                 Button {
                     locationSearch.startSearch(location)
-                    navigationStack.navigateTo(.optionsView)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                        navigationStack.navigateTo(.optionsView)
+                        slidingCardPosition.updatePosition(newPosition: .bottom)
+                    }
                 } label: {
                     RSearchRow(locationItem: location)
                 }.buttonStyle(.plain)
@@ -39,5 +43,6 @@ struct CSearchList_Previews: PreviewProvider {
         CSearchList()
             .environmentObject(DNavigationStack())
             .environmentObject(DLocationSearch())
+            .environmentObject(DCardPosition())
     }
 }
